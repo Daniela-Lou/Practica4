@@ -15,11 +15,11 @@ void main(){
 	fd = open(nom, O_RDONLY);
 
 	if (fd<0){
-		printf("ERROR: L'arxiu no existeix"); 
+		printf("ERROR: L'arxiu no existeix\n"); 
 	}else{
 		desc = open(nou, O_CREAT|O_WRONLY|O_TRUNC, S_IRWXU); 
 		if (desc<0) {
-			printf("ERROR: No s'ha pogut crear"); 
+			printf("ERROR: No s'ha pogut crear\n"); 
 		}else{
 			while ((read(fd,buf,1)) >0){
 				write(desc,buf,1);
