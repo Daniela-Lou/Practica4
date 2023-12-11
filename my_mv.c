@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 void main(){
-	char nom[100], nou[100], buf[1];
+	char nom[100], nou[1200], buf[1];
 	int fd, desc; 
 
 	printf("Introdueix el nom de l'arxiu:\n"); 
@@ -24,8 +24,8 @@ void main(){
 			while ((read(fd,buf,1)) >0){
 				write(desc,buf,1);
 			} 
-		close(desc);
+			close(desc);
 		}
-		unlink(nom); 
+		unlink(nom);
 	}
 }
