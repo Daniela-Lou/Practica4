@@ -12,22 +12,22 @@ void main(){
 
 	fd = open(arxiu, O_RDONLY); 
 	if (fd<0) {
-		printf("ERROR: L'arxiu no existeix");
+		printf("ERROR: L'arxiu no existeix\n");
 	}else{	
 		if (linies<=0){
-			printf("Error: Línies igual a zero o negatives");
+			printf("Error: Línies igual a zero o negatives\n");
 		}else{
 			read(fd, buf, 1);
+			//printf("\n%d\n", linies);
 			for (i =0; i<linies; ){
-				printf("\n%d\n", linies);
 				if(buf[0]==10){
 					i++;
 				}	
 				write(1,buf,1);
 				num = read(fd,buf,1);
-				//if (num=0){
-				//	break;
-				//}
+				if (num==0){
+					break;
+				}
 			       		
 			}
 		}
